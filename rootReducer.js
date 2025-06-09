@@ -18,6 +18,17 @@ export default function rootReducer(state=initialState,action){
                     //console.log(state.employee)
                     return ({cart:state.cart,user:state.user})
 
+
+                    case "ADD_USER":
+            state.user[action.payload[0]]=action.payload[1]
+            
+            return ({cart:state.cart,user:state.user})
+
+            case "CLEAR_CART":
+                     state.cart={}
+                    return ({cart:state.cart,user:state.user})
+
+
         default:
             return ({cart:state.cart,user:state.user})
     }
